@@ -142,6 +142,9 @@ func TestClient_TLSSubscription(t *testing.T) {
 	if subscription.ID != retrievedSubscription.ID {
 		t.Errorf("bad ID: %s (%s)", subscription.ID, retrievedSubscription.ID)
 	}
+	if retrievedSubscription.HasActiveOrder != true {
+		t.Errorf("bad HasActiveOrder: %v (true)", retrievedSubscription.HasActiveOrder)
+	}
 
 	var updatedSubscription *TLSSubscription
 	record(t, fixtureBase+"update", func(c *Client) {

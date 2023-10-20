@@ -21,6 +21,7 @@ type TLSSubscription struct {
 	ID                   string                        `jsonapi:"primary,tls_subscription"`
 	State                string                        `jsonapi:"attr,state"`
 	UpdatedAt            *time.Time                    `jsonapi:"attr,updated_at,iso8601"`
+	HasActiveOrder       bool                          `jsonapi:"attr,has_active_order"`
 }
 
 // TLSSubscriptionCertificate represents a subscription certificate.
